@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "a7993f5e-6d24-440a-9745-1915a2000888",
+		"name": "article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10821254",
+		"_collection_link": "https://winter-eclipse-7312-1.postman.co/workspace/Team-Workspace~c6431aa0-fbb6-4f32-8da8-a54d15c85f6c/collection/10821254-a7993f5e-6d24-440a-9745-1915a2000888?action=share&source=collection_link&creator=10821254"
+	},
+	"item": [
+		{
+			"name": "file upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/umesh/Downloads/image4.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/file/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/umesh/Downloads/image4.jpeg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/file/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"file",
+								"upload"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "325"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"145-imIpuE+VyjO6GNc81HMs55QlvA0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Dec 2024 06:35:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"File uploaded successfully!\",\n    \"data\": {\n        \"fieldname\": \"file\",\n        \"originalname\": \"black-pant.jpg\",\n        \"encoding\": \"7bit\",\n        \"mimetype\": \"image/jpeg\",\n        \"destination\": \"./public/uploads\",\n        \"filename\": \"black-pant-eea9832fff278afb97b6e3ea83b9b4010.jpg\",\n        \"path\": \"public/uploads/black-pant-eea9832fff278afb97b6e3ea83b9b4010.jpg\",\n        \"size\": 247314\n    }\n}"
+				},
+				{
+					"name": "file upload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/umesh/Downloads/image4.jpeg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/file/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"file",
+								"upload"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "314"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13a-nnIr3VUwYAiCuUAt7enPjVTK9Fg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 29 Dec 2024 07:40:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"File uploaded successfully!\",\n    \"data\": {\n        \"fieldname\": \"file\",\n        \"originalname\": \"image4.jpeg\",\n        \"encoding\": \"7bit\",\n        \"mimetype\": \"image/jpeg\",\n        \"destination\": \"./public/uploads\",\n        \"filename\": \"image4-bf49abf99b9f913742bdf4d7bc9db63b.jpeg\",\n        \"path\": \"public/uploads/image4-bf49abf99b9f913742bdf4d7bc9db63b.jpeg\",\n        \"size\": 636313\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"pm.environment.set(\"access_token\",jsonData.data.accessToken)",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"umesh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/article",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/article/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "9875976b-2451-4724-a209-a959b6767130"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"new article\",\n    \"description\": \"this is new article.\",\n    \"imgUrl\": \"http://localhost:3000/uploads/black-pant-eea9832fff278afb97b6e3ea83b9b4010.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/article",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"new article updated twice\",\n    \"description\": \"this is new article updated two times now.\",\n    \"imgUrl\": \"http://localhost:3000/uploads/image4-bf49abf99b9f913742bdf4d7bc9db63b.jpeg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/article/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "b2316cc5-89a3-48f1-a0df-4bfc471544e4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/article/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"article",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "b2316cc5-89a3-48f1-a0df-4bfc471544e4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
